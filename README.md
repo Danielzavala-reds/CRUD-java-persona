@@ -2,9 +2,9 @@
 
 ## Dev
 
-1.Clonar proyecto
-2.Tener JDK v17 instalado
-3.Ejecucion en VSCode: Instalar extension pack en VsCode, abrir la carpeta en el Workplace, ir a la clase principal y se habilitara la opción de Run Java en la parte superior derecha.
+1. Clonar proyecto
+2. Tener JDK v17 instalado
+3. Ejecucion en VSCode: Instalar extension pack en VsCode, abrir la carpeta en el Workplace, ir a la clase principal y se habilitara la opción de Run Java en la parte superior derecha.
 
 ##Info
 
