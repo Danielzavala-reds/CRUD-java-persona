@@ -27,41 +27,39 @@ public class PersonaController {
 
     @GetMapping
     @RequestMapping(value = "personas", method = RequestMethod.GET)
-    public ResponseEntity<?> allPersonas(){
-        List<Persona> listaPersona = this.implementation.getPersonas();
-        return ResponseEntity.ok(listaPersona); 
+    public ResponseEntity<List<Persona>> allPersonas(){
+        // List<Persona> listaPersona = this.implementation.getPersonas();
+        return ResponseEntity.status(HttpStatus.OK).body(implementation.getPersonas()); 
     }
 
     @PostMapping
     @RequestMapping(value = "nueva-persona", method = RequestMethod.POST)
-    public ResponseEntity<?> postPersonas(@RequestBody Persona persona ){
-        Persona createdPersona = this.implementation.createPersona(persona);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdPersona);
+    public ResponseEntity<Object> postPersonas(@RequestBody Persona persona ){
+        // Persona createdPersona = this.implementation.createPersona(persona);
+       return ResponseEntity.status(HttpStatus.CREATED).body(implementation.createPersona(persona));
     }
 
     @PutMapping
     @RequestMapping(value = "editar-persona", method = RequestMethod.PUT)
-    public ResponseEntity<?> editPersonas(@RequestBody Persona persona ){
-        Persona editedPersona = this.implementation.editPersona(persona);
+    public ResponseEntity<Object> editPersonas(@RequestBody Persona persona ){
+        // Persona editedPersona = this.implementation.editPersona(persona);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(editedPersona);
+        return this.implementation.createPersona(persona);
     }   
 
     @GetMapping
     @RequestMapping(value = "personas/{id}", method = RequestMethod.GET)
-    public ResponseEntity<?> findbyIdPersona(@PathVariable Long id){
-        Persona persona = this.implementation.findPersona(id);
+    public ResponseEntity<Object> findbyIdPersona(@PathVariable Long id){
+        // Persona persona = this.implementation.findPersona(id);
 
-        return ResponseEntity.ok(persona);
+        return this.implementation.findPersona(id);
     }
 
     @DeleteMapping
     @RequestMapping(value = "personas/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<?> deleteByIdPersona(@PathVariable Long id){
-        this.implementation.deletePersona(id);
-
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Object> deleteByIdPersona(@PathVariable Long id){
+        
+        return this.implementation.deletePersona(id);
     }
 
 }
