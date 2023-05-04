@@ -8,5 +8,5 @@
 
 ## Info
 
-# Falta implementar excepciones de errores en los controladores
+# Implementaciónes de excepciones ya integradas
 1. Uso de base de datos MySQL en la cual solo se creo una tabla llamada "humanos"
